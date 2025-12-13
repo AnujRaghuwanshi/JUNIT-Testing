@@ -3,6 +3,8 @@ package com.example.CRUDApplication.Controller;
 import com.example.CRUDApplication.Entity.User;
 import com.example.CRUDApplication.Repository.UserRepository;
 import com.example.CRUDApplication.securityJWT.JwtUtil;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
+@Slf4j
 public class AuthController {
 
     @Autowired
@@ -25,17 +28,18 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody User user){
         try {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepo.save(user);
-            return new ResponseEntity("User registered Successfully", HttpStatus.CREATED);
+            return new ResponseEntity<>("User registered Successfully", HttpStatus.CREATED);
         } catch (Exception e) {
+            log.error("Error ocurred for {} user already exist :",user.getUsername());
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User user){
