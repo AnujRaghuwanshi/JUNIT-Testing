@@ -7,8 +7,8 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/employeedb
-    username: root
-    password: root
+    username: your_username
+    password: your_password
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: anujraghuwanshi147@gmail.com
-    password: xjpq qghy aqtd kzha
+    username: your_email
+    password: your_app_password
     properties:
       mail:
         smtp:
