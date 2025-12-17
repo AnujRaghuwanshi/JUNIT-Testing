@@ -4,7 +4,6 @@ import com.example.CRUDApplication.Entity.User;
 import com.example.CRUDApplication.Repository.UserRepository;
 import com.example.CRUDApplication.securityJWT.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
