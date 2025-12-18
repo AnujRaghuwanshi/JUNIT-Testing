@@ -1,6 +1,0 @@
-13:10:51.510 [http-nio-8090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-13:10:51.513 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-13:10:51.516 [http-nio-8090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-13:10:88.884 [http-nio-8090-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
-13:10:88.885 [http-nio-8090-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john_doe' for key 'users.UKr43af9ap4edm43mmtq01oddj6'
-13:10:91.915 [http-nio-8090-exec-1] ERROR c.e.C.Controller.AuthController - Error ocurred for john_doe user already exist :

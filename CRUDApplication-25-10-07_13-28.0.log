@@ -1,3 +1,0 @@
-13:10:93.934 [http-nio-8090-exec-4] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
-13:10:93.936 [http-nio-8090-exec-4] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry 'john_doe' for key 'users.UKr43af9ap4edm43mmtq01oddj6'
-13:10:95.950 [http-nio-8090-exec-4] ERROR c.e.C.Controller.AuthController - Error ocurred for john_doe user already exist :
