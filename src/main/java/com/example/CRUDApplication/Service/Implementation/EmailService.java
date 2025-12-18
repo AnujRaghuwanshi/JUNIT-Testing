@@ -13,15 +13,18 @@ public class EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public void sendmail(String to, String sub, String body){
+    public void sendmail(String to, String username){
         try {
             SimpleMailMessage mail = new SimpleMailMessage();
             mail.setTo(to);
-            mail.setSubject(sub);
-            mail.setText(body);
+            mail.setSubject("Enable Sentiment Analysis");
+            mail.setText("Hello " + username + ",\n\n" +
+                            "You haven’t enabled Sentiment Analysis yet.\n" +
+                            "Please turn it ON to get better insights.\n\n" +
+                            "Regards,\nAnuj Raghuwanshi");
             javaMailSender.send(mail);
         }catch (Exception e){
-            log.error("Exception while sendEmal ",e);
+            log.error("Failed to send email to {}",to,e);
         }
     }
 }

@@ -8,30 +8,30 @@
         </encoder>
     </appender>
 
-    <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<!--    <appender name="myFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
 
-        <file>
-            CRUDApplication.log
-            <!-- File is created inside project folder-->
-        </file>
+<!--        <file>-->
+<!--            CRUDApplication.log-->
+<!--            &lt;!&ndash; File is created inside project folder&ndash;&gt;-->
+<!--        </file>-->
 
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>CRUDApplication-%d{yy-MM-dd_HH-mm}.%i.log</fileNamePattern>
-            <maxFileSize>1MB</maxFileSize>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>CRUDApplication-%d{yy-MM-dd_HH-mm}.%i.log</fileNamePattern>-->
+<!--            <maxFileSize>1MB</maxFileSize>-->
+<!--            <maxHistory>10</maxHistory>-->
+<!--        </rollingPolicy>-->
 
-        <encoder>
-            <pattern>
-                %d{HH:MM:SS.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
-        </encoder>
+<!--        <encoder>-->
+<!--            <pattern>-->
+<!--                %d{HH:MM:SS.SSS} [%thread] %-5level %logger{36} - %msg%n-->
+<!--            </pattern>-->
+<!--        </encoder>-->
 
-    </appender>
+<!--    </appender>-->
 
     <root level="INFO">
         <appender-ref ref="myConsoleAppender"/>
-        <appender-ref ref="myFileAppender"/>
+<!--        <appender-ref ref="myFileAppender"/>-->
     </root>
 
 </configuration>

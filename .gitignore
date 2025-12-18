@@ -18,8 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-*.log
-*.yml
+
 
 ### NetBeans ###
 /nbproject/private/
@@ -33,3 +32,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore config files
+*.yml
+*.yaml
+
+# Ignore log files
+*.log

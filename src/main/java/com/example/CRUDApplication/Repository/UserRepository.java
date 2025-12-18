@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
             value = """
             SELECT * FROM users
             WHERE email IS NOT NULL
-              AND sentiment_analysis = 1
+              AND sentiment_analysis = 0
               AND email REGEXP '^[A-Za-z0-9+_.-]+@[A-Za-z][A-Za-z-]*\\.[A-Za-z]{2,}$'
         """,
             nativeQuery = true
