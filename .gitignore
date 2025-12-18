@@ -36,6 +36,9 @@ build/
 # Ignore config files
 *.yml
 *.yaml
+# Allow example config
+!application-example.yml
+
 
 # Ignore log files
 *.log
