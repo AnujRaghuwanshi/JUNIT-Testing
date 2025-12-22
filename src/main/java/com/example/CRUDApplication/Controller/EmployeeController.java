@@ -41,12 +41,15 @@ public class EmployeeController {
     }
 
     @GetMapping("get/{id}")
-    public ResponseEntity<Optional<Employee>> getEmployee(@PathVariable long id){
+    public ResponseEntity<String> getEmployee(@PathVariable long id){
         Optional<Employee> em = employeeService.GetById(id);
-        if(em.isPresent()){
-            return ResponseEntity.ok(em);
+        if (em.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Employee not found with id " + id);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        String response = employeeService.buildEmployeeWeatherMessage(em.get());
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/get")

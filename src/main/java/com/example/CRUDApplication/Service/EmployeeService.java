@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeService {
+
     Employee CreateEmployee(Employee emp);
 
     Employee UpdateEmployee(Employee employee, long id);
@@ -15,4 +16,7 @@ public interface EmployeeService {
     List<Employee> GetAllEmployee();
 
     Optional<Employee> GetById(long id);
+
+    String buildEmployeeWeatherMessage(Employee employee);
+
 }
