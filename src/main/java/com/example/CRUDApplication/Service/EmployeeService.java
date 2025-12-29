@@ -17,6 +17,6 @@ public interface EmployeeService {
 
     Optional<Employee> GetById(long id);
 
-    String buildEmployeeWeatherMessage(Employee employee);
+    String buildEmployeeWeatherMessage(Employee employee, String city);
 
 }

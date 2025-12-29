@@ -41,14 +41,16 @@ public class EmployeeController {
     }
 
     @GetMapping("get/{id}")
-    public ResponseEntity<String> getEmployee(@PathVariable long id){
-        Optional<Employee> em = employeeService.GetById(id);
+    public ResponseEntity<String> getEmployee(@PathVariable long id,@RequestParam(required=false) String city){
+        if(city == null || city.isBlank()){
+return ResponseEntity.badRequest().body("City is required");
+}       Optional<Employee> em = employeeService.GetById(id);
         if (em.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("Employee not found with id " + id);
         }
 
-        String response = employeeService.buildEmployeeWeatherMessage(em.get());
+        String response = employeeService.buildEmployeeWeatherMessage(em.get(),city);
         return ResponseEntity.ok(response);
     }
 

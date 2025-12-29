@@ -51,18 +51,19 @@ public class EmployeeSerImp implements EmployeeService {
     }
 
     @Override
-    public String buildEmployeeWeatherMessage(Employee employee) {
+    public String buildEmployeeWeatherMessage(Employee employee, String city) {
 
         try {
-            WeatherResponse weatherResponse = weatherService.getWeatherByCity("Mumbai");
+            WeatherResponse weatherResponse = weatherService.getWeatherByCity(city);
 
             return String.format(
-                    "Hi, %s (ID: %d). Temperature feels like %.1f°C, Humidity is %d%%, %s in Mumbai.",
+                    "Hi, %s (ID: %d). Temperature feels like %.1f°C, Humidity is %d%%, %s in %s.",
                     employee.getName(),
                     employee.getEid(),
                     weatherResponse.getMain().getTemp(),
                     weatherResponse.getMain().getHumidity(),
-                    weatherResponse.getWeather().get(0).getDescription()
+                    weatherResponse.getWeather().get(0).getDescription(),
+                    city
             );
         } catch (Exception e) {
             return String.format(
